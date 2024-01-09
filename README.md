@@ -34,3 +34,13 @@ then run
 ```
 npm start
 ```
+
+## Preview
+
+![Screenshot 2024-01-10 040109](https://github.com/Dopiumistfg/resyze/assets/91946606/3cc49336-58c6-48e4-a25b-501a1d5fbfb7)
+
+![Screenshot 2024-01-10 040130](https://github.com/Dopiumistfg/resyze/assets/91946606/b44e4efd-e73c-4fb7-971e-82cfcdd9e0be)
+
+![Screenshot 2024-01-10 040139](https://github.com/Dopiumistfg/resyze/assets/91946606/b5e1da17-3e91-4705-8a24-7b0d9dc71b85)
+
+
