@@ -1,0 +1,219 @@
+/* Homepage.css */
+
+/* Apply dark theme to the entire content area */
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+  height: 100vh;
+  overflow: hidden; /* Prevent content from overflowing */
+  position: relative;
+}
+
+/* Style the content within the dark-theme div */
+.content {
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: margin-top 0.5s;
+}
+/* Your existing CSS */
+
+/* Styles for the Resyze text */
+
+/* Styles for the text container */
+.text-container {
+  display: flex; /* Use flexbox to keep "Re" and "Syze" together */
+  align-items: center; /* Align items vertically */
+}
+
+/* Styles for the Resyze text */
+.resyze-text {
+  font-size: 5em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300; /* QuickSand Light */
+  color: hsl(0, 0%, 100%); /* Your color based on hue */
+}
+
+/* Styles for the Syze text */
+.syze-text {
+  font-size: 5em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold; /* Bold font weight */
+}
+
+/* Styles for the custom file upload */
+.custom-file-upload {
+  display: block; /* Make label a block element */
+  width: fit-content; /* Adjust width to content */
+  padding: 15px 95px;
+  margin-top: 20px; /* Add margin top */
+  cursor: pointer;
+  background: transparent; /* Sync button color with the text */
+  color: #fff; /* Set text color to white for better contrast */
+  border: 1px solid; /* Remove border */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease; /* Add transition for hover effect */
+  font-family: "Quicksand", sans-serif; /* Set font family */
+}
+/* Hover effect for custom file upload */
+.custom-file-upload:hover {
+  border: 1px solid #fff; /* Add border on hover */
+  background-color: white; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+.preview-section {
+  display: none;
+  z-index: 2;
+}
+
+.preview-section.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 160px;
+  z-index: 2; /* Increase the z-index to bring it to the foreground */
+}
+
+.preview-box {
+  border: 2px solid #fff;
+  background-color: #121212;
+  padding: 10px;
+  display: none;
+  z-index: 2;
+}
+.slider {
+  position: relative;
+  width: 380px;
+  top: 5px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Ensure it's in the foreground */
+}
+
+/* Other styles for the slider, if needed */
+.slider-input {
+  width: 100%;
+  -webkit-appearance: none; /* Override default styles */
+  appearance: none;
+  height: 5px; /* Slider track height */
+  border-radius: 5px;
+  background: #ffffff; /* Track color */
+  outline: none;
+  opacity: 1;
+  transition: opacity 0.2s;
+  z-index: 10; /* Ensure it's in the foreground */
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default styles */
+  appearance: none;
+  width: 20px; /* Handle size */
+  height: 20px;
+  border-radius: 50%; /* Circular handle */
+  background: #000000; /* Handle color */
+  cursor: pointer;
+  border: 2px solid white; /* Handle border */
+  z-index: 10; /* Ensure it's in the foreground */
+}
+.slider-input::-moz-range-thumb {
+  width: 20px; /* Handle width */
+  height: 20px; /* Handle height */
+  border-radius: 50%; /* Circular shape */
+  background: #4caf50; /* Handle color */
+  cursor: pointer;
+  z-index: 10; /* Ensure it's in the foreground */
+}
+
+.slider-value {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+
+.preview-section.visible .preview-box {
+  display: block;
+  transition: top 0.6s ease, left 0.6s ease, transform 0.6s ease;
+}
+
+.preview-box img {
+  max-width: 100%;
+  max-height: 300px;
+}
+.preview-visible .text-container {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  transition: top 0.3s ease;
+}
+
+.preview-visible .content {
+  top: 20px;
+  left: 20px;
+  transform: none;
+  transition: top 0.6s ease, left 0.6s ease, transform 0.6s ease;
+}
+
+.preview-visible .custom-file-upload {
+  display: none;
+}
+
+.confirm-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 15px 95px;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  font-family: "Quicksand", sans-serif;
+  display: block;
+  width: fit-content; /* Adjust width to content */
+}
+.confirm-button:hover {
+  border: 1px solid #fff;
+  background-color: white;
+  color: black;
+}
+
+.loading-text {
+  position: absolute;
+  font: 2.5em "Quicksand", sans-serif;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: justify;
+  z-index: 3;
+}
+
+.loader {
+  position: relative;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #ffffff;
+  border-left: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  z-index: 3;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
